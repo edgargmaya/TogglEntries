@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "964280db-085b-4200-9920-5c0645e85ef2",
+		"name": "Stackit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "update caching",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/stackit-challenge/api/v2/update",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"stackit-challenge",
+						"api",
+						"v2",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get issues V2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"expand\": \"names,schema\",\n    \"startAt\": 0,\n    \"maxResults\": 50,\n    \"total\": 1,\n    \"issues\": [\n        {\n            \"expand\": \"\",\n            \"id\": \"10002\",\n            \"self\": \"https://your-domain.atlassian.net/rest/api/3/issue/10002\",\n            \"key\": \"ED-1\",\n            \"fields\": {\n                \"watcher\": {\n                    \"self\": \"https://your-domain.atlassian.net/rest/api/3/issue/EX-1/watchers\",\n                    \"isWatching\": false,\n                    \"watchCount\": 1,\n                    \"watchers\": [\n                        {\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g\",\n                            \"accountId\": \"5b10a2844c20165700ede21g\",\n                            \"displayName\": \"Mia Krystof\",\n                            \"active\": false\n                        }\n                    ]\n                },\n                \"attachment\": [\n                    {\n                        \"id\": 10000,\n                        \"self\": \"https://your-domain.atlassian.net/rest/api/3/attachments/10000\",\n                        \"filename\": \"picture.jpg\",\n                        \"author\": {\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g\",\n                            \"key\": \"\",\n                            \"accountId\": \"5b10a2844c20165700ede21g\",\n                            \"name\": \"\",\n                            \"avatarUrls\": {\n                                \"48x48\": \"https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=48&s=48\",\n                                \"24x24\": \"https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=24&s=24\",\n                                \"16x16\": \"https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=16&s=16\",\n                                \"32x32\": \"https://avatar-management--avatars.server-location.prod.public.atl-paas.net/initials/MK-5.png?size=32&s=32\"\n                            },\n                            \"displayName\": \"Mia Krystof\",\n                            \"active\": false\n                        },\n                        \"created\": \"2020-08-24T06:23:52.168+0000\",\n                        \"size\": 23123,\n                        \"mimeType\": \"image/jpeg\",\n                        \"content\": \"https://your-domain.atlassian.net/jira/secure/attachments/10000/picture.jpg\",\n                        \"thumbnail\": \"https://your-domain.atlassian.net/jira/secure/thumbnail/10000/picture.jpg\"\n                    }\n                ],\n                \"sub-tasks\": [\n                    {\n                        \"id\": \"10000\",\n                        \"type\": {\n                            \"id\": \"10000\",\n                            \"name\": \"\",\n                            \"inward\": \"Parent\",\n                            \"outward\": \"Sub-task\"\n                        },\n                        \"outwardIssue\": {\n                            \"id\": \"10003\",\n                            \"key\": \"ED-2\",\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/issue/ED-2\",\n                            \"fields\": {\n                                \"status\": {\n                                    \"iconUrl\": \"https://your-domain.atlassian.net/images/icons/statuses/open.png\",\n                                    \"name\": \"Open\"\n                                }\n                            }\n                        }\n                    }\n                ],\n                \"description\": {\n                    \"type\": \"doc\",\n                    \"version\": 1,\n                    \"content\": [\n                        {\n                            \"type\": \"paragraph\",\n                            \"content\": [\n                                {\n                                    \"type\": \"text\",\n                                    \"text\": \"Main order flow broken\"\n                                }\n                            ]\n                        }\n                    ]\n                },\n                \"project\": {\n                    \"self\": \"https://your-domain.atlassian.net/rest/api/3/project/EX\",\n                    \"id\": \"10000\",\n                    \"key\": \"EX\",\n                    \"name\": \"Example\",\n                    \"avatarUrls\": {\n                        \"48x48\": \"https://your-domain.atlassian.net/secure/projectavatar?size=large&pid=10000\",\n                        \"24x24\": \"https://your-domain.atlassian.net/secure/projectavatar?size=small&pid=10000\",\n                        \"16x16\": \"https://your-domain.atlassian.net/secure/projectavatar?size=xsmall&pid=10000\",\n                        \"32x32\": \"https://your-domain.atlassian.net/secure/projectavatar?size=medium&pid=10000\"\n                    },\n                    \"projectCategory\": {\n                        \"self\": \"https://your-domain.atlassian.net/rest/api/3/projectCategory/10000\",\n                        \"id\": \"10000\",\n                        \"name\": \"FIRST\",\n                        \"description\": \"First Project Category\"\n                    },\n                    \"simplified\": false,\n                    \"style\": \"classic\",\n                    \"insight\": {\n                        \"totalIssueCount\": 100,\n                        \"lastIssueUpdateTime\": \"2020-08-24T06:23:50.373+0000\"\n                    }\n                },\n                \"comment\": [\n                    {\n                        \"self\": \"https://your-domain.atlassian.net/rest/api/3/issue/10010/comment/10000\",\n                        \"id\": \"10000\",\n                        \"author\": {\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g\",\n                            \"accountId\": \"5b10a2844c20165700ede21g\",\n                            \"displayName\": \"Mia Krystof\",\n                            \"active\": false\n                        },\n                        \"body\": {\n                            \"type\": \"doc\",\n                            \"version\": 1,\n                            \"content\": [\n                                {\n                                    \"type\": \"paragraph\",\n                                    \"content\": [\n                                        {\n                                            \"type\": \"text\",\n                                            \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget venenatis elit. Duis eu justo eget augue iaculis fermentum. Sed semper quam laoreet nisi egestas at posuere augue semper.\"\n                                        }\n                                    ]\n                                }\n                            ]\n                        },\n                        \"updateAuthor\": {\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g\",\n                            \"accountId\": \"5b10a2844c20165700ede21g\",\n                            \"displayName\": \"Mia Krystof\",\n                            \"active\": false\n                        },\n                        \"created\": \"2020-08-24T06:23:50.998+0000\",\n                        \"updated\": \"2020-08-24T06:23:50.998+0000\",\n                        \"visibility\": {\n                            \"type\": \"role\",\n                            \"value\": \"Administrators\"\n                        }\n                    }\n                ],\n                \"issuelinks\": [\n                    {\n                        \"id\": \"10001\",\n                        \"type\": {\n                            \"id\": \"10000\",\n                            \"name\": \"Dependent\",\n                            \"inward\": \"depends on\",\n                            \"outward\": \"is depended by\"\n                        },\n                        \"outwardIssue\": {\n                            \"id\": \"10004L\",\n                            \"key\": \"PR-2\",\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/issue/PR-2\",\n                            \"fields\": {\n                                \"status\": {\n                                    \"iconUrl\": \"https://your-domain.atlassian.net/images/icons/statuses/open.png\",\n                                    \"name\": \"Open\"\n                                }\n                            }\n                        }\n                    },\n                    {\n                        \"id\": \"10002\",\n                        \"type\": {\n                            \"id\": \"10000\",\n                            \"name\": \"Dependent\",\n                            \"inward\": \"depends on\",\n                            \"outward\": \"is depended by\"\n                        },\n                        \"inwardIssue\": {\n                            \"id\": \"10004\",\n                            \"key\": \"PR-3\",\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/issue/PR-3\",\n                            \"fields\": {\n                                \"status\": {\n                                    \"iconUrl\": \"https://your-domain.atlassian.net/images/icons/statuses/open.png\",\n                                    \"name\": \"Open\"\n                                }\n                            }\n                        }\n                    }\n                ],\n                \"worklog\": [\n                    {\n                        \"self\": \"https://your-domain.atlassian.net/rest/api/3/issue/10010/worklog/10000\",\n                        \"author\": {\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g\",\n                            \"accountId\": \"5b10a2844c20165700ede21g\",\n                            \"displayName\": \"Mia Krystof\",\n                            \"active\": false\n                        },\n                        \"updateAuthor\": {\n                            \"self\": \"https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g\",\n                            \"accountId\": \"5b10a2844c20165700ede21g\",\n                            \"displayName\": \"Mia Krystof\",\n                            \"active\": false\n                        },\n                        \"comment\": {\n                            \"type\": \"doc\",\n                            \"version\": 1,\n                            \"content\": [\n                                {\n                                    \"type\": \"paragraph\",\n                                    \"content\": [\n                                        {\n                                            \"type\": \"text\",\n                                            \"text\": \"I did some work here.\"\n                                        }\n                                    ]\n                                }\n                            ]\n                        },\n                        \"updated\": \"2020-08-24T06:23:51.307+0000\",\n                        \"visibility\": {\n                            \"type\": \"group\",\n                            \"value\": \"jira-developers\"\n                        },\n                        \"started\": \"2020-08-24T06:23:51.307+0000\",\n                        \"timeSpent\": \"3h 20m\",\n                        \"timeSpentSeconds\": 12000,\n                        \"id\": \"100028\",\n                        \"issueId\": \"10002\"\n                    }\n                ],\n                \"updated\": 1,\n                \"timetracking\": {\n                    \"originalEstimate\": \"10m\",\n                    \"remainingEstimate\": \"3m\",\n                    \"timeSpent\": \"6m\",\n                    \"originalEstimateSeconds\": 600,\n                    \"remainingEstimateSeconds\": 200,\n                    \"timeSpentSeconds\": 400\n                }\n            }\n        }\n    ],\n    \"warningMessages\": [\n        \"The value 'bar' does not exist for the field 'foo'.\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/stackit-challenge/api/v2/projects/PA/issues",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"stackit-challenge",
+						"api",
+						"v2",
+						"projects",
+						"PA",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get issues V1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/stackit-challenge/api/v1/projects/10003/issues",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"stackit-challenge",
+						"api",
+						"v1",
+						"projects",
+						"10003",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
