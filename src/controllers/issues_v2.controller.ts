@@ -35,7 +35,7 @@ export async function getIssuesV2(req: Request, res: Response): Promise<Response
                 "message" : `The project with id: ${req.params.projectId}, doesn't exists. Please, try again`
             });
 
-        let togglEntries: Array<any> = caching ? await getEntriesFromMySql(project.name) : await getTogglEntries(req.query.start, req.query.stop);
+        let togglEntries: Array<any> = caching ? await getEntriesFromMySql(project.name) : await getTogglEntries(req.query.start?.toString(), req.query.stop?.toString());
         if( togglEntries.length == 0 && caching ){
             togglEntries = await updateCaching();
         }
